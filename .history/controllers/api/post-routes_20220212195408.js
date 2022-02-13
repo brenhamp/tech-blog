@@ -9,7 +9,15 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
+<<<<<<< HEAD
       'post_body',
+=======
+<<<<<<< HEAD
+      'post_url',
+=======
+      'post_body',
+>>>>>>> feature/server
+>>>>>>> feature/route
       'title',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -43,7 +51,15 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
+<<<<<<< HEAD
       'post_body',
+=======
+<<<<<<< HEAD
+      'post_url',
+=======
+      'post_body',
+>>>>>>> feature/server
+>>>>>>> feature/route
       'title',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -79,7 +95,15 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
+<<<<<<< HEAD
     post_body: req.body.post_body,
+=======
+<<<<<<< HEAD
+    post_url: req.body.post_url,
+=======
+    post_body: req.body.post_body,
+>>>>>>> feature/server
+>>>>>>> feature/route
     user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))
