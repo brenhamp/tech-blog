@@ -13,7 +13,11 @@ class Post extends Model {
         },
         attributes: [
           "id",
+<<<<<<< HEAD
+          "post_url",
+=======
           "post_body",
+>>>>>>> feature/server
           "title",
           "created_at",
           [

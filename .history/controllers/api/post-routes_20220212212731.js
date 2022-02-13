@@ -3,7 +3,10 @@ const sequelize = require('../../config/connection');
 const { Post, User, Comment, Vote } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+<<<<<<< HEAD
 // get all users
+=======
+>>>>>>> feature/server
 router.get('/', (req, res) => {
   console.log('======================');
   Post.findAll({
@@ -47,11 +50,7 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-<<<<<<< HEAD
-      'post_url',
-=======
       'post_body',
->>>>>>> feature/server
       'title',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -85,17 +84,9 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-<<<<<<< HEAD
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
     title: req.body.title,
-    post_url: req.body.post_url,
-=======
-  // expects {title: 'Taskmaster goes public!', post_body: 'https://taskmaster.com/press', user_id: 1}
-  Post.create({
-    title: req.body.title,
-    post_body: req.body.post_body,
->>>>>>> feature/server
+    post_content: req.body.post_content,
     user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))
@@ -106,7 +97,6 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.put('/upvote', withAuth, (req, res) => {
-  // custom static method created in models/Post.js
   Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
     .then(updatedVoteData => res.json(updatedVoteData))
     .catch(err => {

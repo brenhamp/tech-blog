@@ -13,7 +13,11 @@ class Post extends Model {
           },
           attributes: [
             'id',
+<<<<<<< HEAD
             'post_url',
+=======
+            'post_body',
+>>>>>>> feature/server
             'title',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -45,7 +49,11 @@ class Post extends Model {
         type: DataTypes.STRING,
         allowNull: false
       },
+<<<<<<< HEAD
       post_url: {
+=======
+      post_body: {
+>>>>>>> feature/server
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
