@@ -6,7 +6,15 @@
   <form class="edit-post-form">
     <div>
       <input name="post-title" type="text" value="{{post.title}}" />
+<<<<<<< HEAD
+      <span>({{post.post_body}})</span>
+=======
+<<<<<<< HEAD
       <span>({{format_url post.post_url}})</span>
+=======
+      <span>({{post.post_body}})</span>
+>>>>>>> feature/server
+>>>>>>> feature/route
     </div>
     <div>
       {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}

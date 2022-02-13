@@ -13,7 +13,15 @@ class Post extends Model {
         },
         attributes: [
           "id",
+<<<<<<< HEAD
+          "post_body",
+=======
+<<<<<<< HEAD
           "post_url",
+=======
+          "post_body",
+>>>>>>> feature/server
+>>>>>>> feature/route
           "title",
           "created_at",
           [
@@ -56,7 +64,15 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+<<<<<<< HEAD
+    post_body: {
+=======
+<<<<<<< HEAD
     post_url: {
+=======
+    post_body: {
+>>>>>>> feature/server
+>>>>>>> feature/route
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
