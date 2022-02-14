@@ -1,0 +1,12 @@
+<article class="post">
+  <div class="title">
+   <a href="/post/{{id}}" class="title">{{title}}</a>  
+
+   <div class="float-right"></div> {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
+  </div>
+
+
+    <div class="post-body">{{post_body}}</div>
+
+  <div class="comment-link"><a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a></div>
+</article>
